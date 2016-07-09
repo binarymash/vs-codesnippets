@@ -9,31 +9,57 @@
       <HelpUrl>https://github.com/binarymash/vs-codesnippets/tree/master/bddfy</HelpUrl>
     </Header>
     <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>TestAttribute</ID>
+          <ToolTip>Depending on your test framework you might need to add an attribute to identify this as a test. For example, for xUnit.net you'll want [Fact] or [Theory].</ToolTip>
+          <Default>[Fact]</Default>
+        </Literal>
+        <Literal>
+          <ID>ScenarioName</ID>
+          <ToolTip>Replace with the name of the scenario.</ToolTip>
+          <Default>BehaveInACertainWay</Default>
+        </Literal>
+        <Literal>
+          <ID>GivenStepName</ID>
+          <ToolTip>Replace with the name of an initial state.</ToolTip>
+          <Default>AnInitialState</Default>
+        </Literal>
+        <Literal>
+          <ID>WhenStepName</ID>
+          <ToolTip>Replace with the name of an action.</ToolTip>
+          <Default>SomethingHappens</Default>
+        </Literal>
+        <Literal>
+          <ID>ThenStepName</ID>
+          <ToolTip>Replace with the name of an assertion.</ToolTip>
+          <Default>AConsequenceOfThisIs</Default>
+        </Literal>
+      </Declarations>
       <Code Language="CSharp">
-        <![CDATA[
-public void ShouldBehaveInACertainWay()
+        <![CDATA[$TestAttribute$
+public void Should$ScenarioName$()
 {
-    this.Given(_ => _.GivenAnInitialState())
-        .When(_ => _.WhenSomethingHappens())
-        .Then(_ => _.ThenAConsequenceOfThisIs())
+    this.Given(_ => _.Given$GivenStepName$())
+        .When(_ => _.When$WhenStepName$())
+        .Then(_ => _.Then$ThenStepName$())
         .BDDfy();
 }
 
-private void GivenAnInitialState()
+private void Given$GivenStepName$()
 {
     throw new NotImplementedException();
 }
 
-private void WhenSomethingHappens()
+private void When$WhenStepName$()
 {
     throw new NotImplementedException();
 }
 
-private void ThenAConsequenceOfThisIs()
+private void Then$ThenStepName$()
 {
     throw new NotImplementedException();
-}
-]]>
+}]]>
       </Code>
     </Snippet>
   </CodeSnippet>
@@ -46,13 +72,18 @@ private void ThenAConsequenceOfThisIs()
       <HelpUrl>https://github.com/binarymash/vs-codesnippets/tree/master/bddfy</HelpUrl>
     </Header>
     <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>GivenStepName</ID>
+          <ToolTip>Replace with the name of an initial state.</ToolTip>
+          <Default>AnInitialState</Default>
+        </Literal>
+      </Declarations>
       <Code Language="CSharp">
-        <![CDATA[
-private void GivenAnInitialState()
+        <![CDATA[private void Given$GivenStepName$()
 {
     throw new NotImplementedException();
-}
-]]>
+}]]>
       </Code>
     </Snippet>
   </CodeSnippet>
@@ -65,13 +96,18 @@ private void GivenAnInitialState()
       <HelpUrl>https://github.com/binarymash/vs-codesnippets/tree/master/bddfy</HelpUrl>      
     </Header>
     <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>WhenStepName</ID>
+          <ToolTip>Replace with the name of an action.</ToolTip>
+          <Default>SomethingHappens</Default>
+        </Literal>
+      </Declarations>
       <Code Language="CSharp">
-        <![CDATA[
-private void WhenSomethingHappens()
+        <![CDATA[private void When$WhenStepName$()
 {
     throw new NotImplementedException();
-}
-]]>
+}]]>
       </Code>
     </Snippet>
   </CodeSnippet>
@@ -84,13 +120,18 @@ private void WhenSomethingHappens()
       <HelpUrl>https://github.com/binarymash/vs-codesnippets/tree/master/bddfy</HelpUrl>
     </Header>
     <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>ThenStepName</ID>
+          <ToolTip>Replace with the name of an assertion.</ToolTip>
+          <Default>AConsequenceOfThisIs</Default>
+        </Literal>
+      </Declarations>
       <Code Language="CSharp">
-        <![CDATA[
-private void ThenAConsequenceOfThisIs()
+        <![CDATA[private void Then$ThenStepName$()
 {
     throw new NotImplementedException();
-}
-]]>
+}]]>
       </Code>
     </Snippet>
   </CodeSnippet>
