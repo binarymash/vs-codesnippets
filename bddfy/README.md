@@ -14,7 +14,7 @@ public void ShouldBehaveInACertainWay()
 {
     this.Given(_ => _.GivenAnInitialState())
         .When(_ => _.WhenSomethingHappens())
-        .Then(_ => _.ThenTheNewStateIs())
+        .Then(_ => _.ThenAConsequenceOfThisIs())
         .BDDfy();
 }
 
