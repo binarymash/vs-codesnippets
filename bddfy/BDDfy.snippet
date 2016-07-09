@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>BDDfy Scenario</Title>
+      <Description>Creates an empty BDDfy test scenario</Description>
+      <Author>Philip Wood</Author>
+      <Shortcut><![CDATA[bddfy]]></Shortcut>
+      <HelpUrl></HelpUrl>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[
+public void ShouldBehaveInACertainWay()
+{
+    this.Given(_ => _.GivenAnInitialState())
+        .When(_ => _.WhenSomethingHappens())
+        .Then(_ => _.ThenTheNewStateIs())
+        .BDDfy();
+}
+
+private void GivenAnInitialState()
+{
+    throw new NotImplementedException();
+}
+
+private void WhenSomethingHappens()
+{
+    throw new NotImplementedException();
+}
+
+private void ThenAConsequenceOfThisIs()
+{
+    throw new NotImplementedException();
+}
+]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>BDDfy Scenario Given method implementation</Title>
+      <Description>Creates an empty implementation of a BDDfy Given method</Description>
+      <Author>Philip Wood</Author>
+      <Shortcut><![CDATA[bddfyg]]></Shortcut>
+      <HelpUrl></HelpUrl>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[
+private void GivenAnInitialState()
+{
+    throw new NotImplementedException();
+}
+]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>BDDfy Scenario When method implementation</Title>
+      <Description>Creates an empty implementation of a BDDfy When method</Description>
+      <Author>Philip Wood</Author>
+      <Shortcut><![CDATA[bddfyw]]></Shortcut>
+      <HelpUrl></HelpUrl>      
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[
+private void WhenSomethingHappens()
+{
+    throw new NotImplementedException();
+}
+]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>BDDfy Scenario Then method implementation</Title>
+      <Description>Creates an empty implementation of a BDDfy Then method implementation</Description>
+      <Author>Philip Wood</Author>
+      <Shortcut><![CDATA[bddfyt]]></Shortcut>
+      <HelpUrl></HelpUrl>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[
+private void ThenAConsequenceOfThisIs()
+{
+    throw new NotImplementedException();
+}
+]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
