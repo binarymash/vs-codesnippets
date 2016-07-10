@@ -9,6 +9,9 @@ Snippets for creating test scenarios using [TestStack.BDDfy](https://github.com/
 Creates an empty test scenario definition, including `Given`, `When` and `Then` step definitions. You'll want to use this each time you create a new test.
 
 ```csharp
+using TestStack.BDDfy;
+```
+```csharp
 [Fact]
 public void ShouldBehaveInACertainWay()
 {
