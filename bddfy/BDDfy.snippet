@@ -2,10 +2,10 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>BDDfy Scenario</Title>
-      <Description>Creates an empty BDDfy test scenario</Description>
+      <Title>BDDfy Scenario with step definitions</Title>
+      <Description>Creates an empty BDDfy test scenario, including Given, When and Then step definitions.</Description>
       <Author>Philip Wood</Author>
-      <Shortcut><![CDATA[bddfy]]></Shortcut>
+      <Shortcut><![CDATA[bddfyfull]]></Shortcut>
       <HelpUrl>https://github.com/binarymash/vs-codesnippets/tree/master/bddfy</HelpUrl>
     </Header>
     <Snippet>
@@ -70,10 +70,62 @@ private void Then$ThenStepName$()
   </CodeSnippet>
   <CodeSnippet Format="1.0.0">
     <Header>
+      <Title>BDDfy Scenario</Title>
+      <Description>Creates an empty BDDfy test scenario without any step definitions.</Description>
+      <Author>Philip Wood</Author>
+      <Shortcut><![CDATA[bddfy]]></Shortcut>
+      <HelpUrl>https://github.com/binarymash/vs-codesnippets/tree/master/bddfy</HelpUrl>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>TestStack.BDDfy</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>TestAttribute</ID>
+          <ToolTip>Depending on your test framework you might need to add an attribute to identify this as a test. For example, for xUnit.net you'll want [Fact] or [Theory].</ToolTip>
+          <Default>[Fact]</Default>
+        </Literal>
+        <Literal>
+          <ID>ScenarioName</ID>
+          <ToolTip>Replace with the name of the scenario.</ToolTip>
+          <Default>BehaveInACertainWay</Default>
+        </Literal>
+        <Literal>
+          <ID>GivenStepName</ID>
+          <ToolTip>Replace with the name of an initial state.</ToolTip>
+          <Default>AnInitialState</Default>
+        </Literal>
+        <Literal>
+          <ID>WhenStepName</ID>
+          <ToolTip>Replace with the name of an action.</ToolTip>
+          <Default>SomethingHappens</Default>
+        </Literal>
+        <Literal>
+          <ID>ThenStepName</ID>
+          <ToolTip>Replace with the name of an assertion.</ToolTip>
+          <Default>AConsequenceOfThisIs</Default>
+        </Literal>      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[$TestAttribute$
+public void Should$ScenarioName$()
+{
+    this.Given(_ => _.Given$GivenStepName$())
+        .When(_ => _.When$WhenStepName$())
+        .Then(_ => _.Then$ThenStepName$())
+        .BDDfy();
+}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
       <Title>BDDfy Scenario Given method implementation</Title>
       <Description>Creates an empty implementation of a BDDfy Given method</Description>
       <Author>Philip Wood</Author>
-      <Shortcut><![CDATA[bddfyg]]></Shortcut>
+      <Shortcut><![CDATA[given]]></Shortcut>
       <HelpUrl>https://github.com/binarymash/vs-codesnippets/tree/master/bddfy</HelpUrl>
     </Header>
     <Snippet>
@@ -97,7 +149,7 @@ private void Then$ThenStepName$()
       <Title>BDDfy Scenario When method implementation</Title>
       <Description>Creates an empty implementation of a BDDfy When method</Description>
       <Author>Philip Wood</Author>
-      <Shortcut><![CDATA[bddfyw]]></Shortcut>
+      <Shortcut><![CDATA[when]]></Shortcut>
       <HelpUrl>https://github.com/binarymash/vs-codesnippets/tree/master/bddfy</HelpUrl>      
     </Header>
     <Snippet>
@@ -121,7 +173,7 @@ private void Then$ThenStepName$()
       <Title>BDDfy Scenario Then method implementation</Title>
       <Description>Creates an empty implementation of a BDDfy Then method implementation</Description>
       <Author>Philip Wood</Author>
-      <Shortcut><![CDATA[bddfyt]]></Shortcut>
+      <Shortcut><![CDATA[then]]></Shortcut>
       <HelpUrl>https://github.com/binarymash/vs-codesnippets/tree/master/bddfy</HelpUrl>
     </Header>
     <Snippet>
